@@ -13,5 +13,6 @@ CREATE TABLE events (
     time TEXT ,
     price DECIMAL(7,2) NOT NULL,
     rating INT CHECK(rating > 0 AND rating <= 5),
-    featured BOOLEAN DEFAULT false
+    featured BOOLEAN DEFAULT false,
+    image TEXT
 );
