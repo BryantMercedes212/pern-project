@@ -16,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/joinpursuit/pern-final-project/issues"
   },
-  "homepage": "https://github.com/joinpursuit/pern-final-project#readme"
+  "homepage": "https://github.com/joinpursuit/pern-final-project#readme",
+  "dependencies": {
+    "@emotion/react": "^11.8.1",
+    "@emotion/styled": "^11.8.1",
+    "@mui/material": "^5.4.3"
+  }
 }

@@ -19,7 +19,6 @@ events.get("/", async (_, res) => {
 
     return;
   }
-  console.log(allEvents);
   res.status(200).json({ success: true, payload: allEvents });
 });
 
@@ -36,6 +35,8 @@ events.get("/:id", async (req, res) => {
 
 // Create event
 events.post("/", async (req, res) => {
+  console.log("Im not run");
+
   const newEvent = await addNewEvent(req.body);
   res.status(200).json({ success: true, payload: newEvent });
 });
@@ -52,9 +53,10 @@ events.delete("/:id", async (req, res) => {
   }
 });
 
-// Update event
+// Update event updateEvent
 events.put("/:id", async (req, res) => {
   console.log("UPDATE req to /events/:id");
+  console.log(req.params.id);
   const updatedEvent = await updateEvent(req.params.id, req.body);
   if (updatedEvent.id) {
     res.status(200).json({ success: true, payload: updatedEvent });

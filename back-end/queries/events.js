@@ -21,11 +21,20 @@ const getOneEvent = async (id) => {
 
 const addNewEvent = async (newEvent) => {
   try {
-    const { name, description, date, time, price, rating, featured, image } =
-      newEvent;
+    const {
+      name,
+      description,
+      date,
+      start_time,
+      end_time,
+      price,
+      rating,
+      featured,
+      image,
+    } = newEvent;
     const event = await db.one(
-      "INSERT INTO events (name, description, date, time, price, rating, featured, image) VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING *",
-      [name, description, date, time, price, rating, featured, image]
+      "INSERT INTO events (name, description, date, start_time, end_time, price, rating, featured, image) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *",
+      [name, description, date, start_time, end_time, price, 1, featured, image]
     );
     return event;
   } catch (error) {
@@ -46,23 +55,34 @@ const deleteEvent = async (id) => {
   }
 };
 
-const updateEvent = async (event, id) => {
-  const { name, description, date, time, price, rating, featured, image } =
-    event;
-  const query =
-    "UPDATE events SET name=$1, description=$2, date=$3, time=$4, price=$5, rating=$6, featured=$7, image=$8, WHERE id=$9 RETURNING *";
-  const values = [
+const updateEvent = async (id, event) => {
+  const {
     name,
     description,
     date,
-    time,
+    start_time,
+    end_time,
     price,
     rating,
     featured,
     image,
-    id,
-  ];
-  const updated = await db.one(query, values);
+  } = event;
+
+  const updated = await db.one(
+    "UPDATE events SET name=$1, description=$2, date=$3, start_time=$4, end_time=$5, price=$6, rating=$7, featured=$8, image=$9 WHERE id=$10 RETURNING *",
+    [
+      name,
+      description,
+      date,
+      start_time,
+      end_time,
+      price,
+      rating,
+      featured,
+      image,
+      id,
+    ]
+  );
 
   return updated;
 };
