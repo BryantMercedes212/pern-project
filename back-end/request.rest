@@ -1,0 +1,29 @@
+GET http://localhost:3333/events
+###
+POST http://localhost:3333/events
+Content-Type: application/json 
+
+{
+      "name": "BRYANT",
+      "description": "LOL",
+      "date": "2022-08-01",
+      "start_time": "06:00",
+      "end_time": "14:00",
+      "price": "25.35",
+      "featured": false,
+      "image": null
+}
+
+###
+
+PUT http://localhost:3333/events/1
+Content-Type: application/json 
+
+{
+      "name": "BRYANT",
+      "date": "2022-08-01",
+      "price": "25.35"
+}
+
+###
+

@@ -9,10 +9,11 @@ CREATE TABLE events (
     id SERIAL PRIMARY KEY, 
     name TEXT NOT NULL,
     description TEXT,
-    date DATE NOT NULL,
-    time TEXT ,
-    price DECIMAL(7,2) NOT NULL,
-    rating INT CHECK(rating > 0 AND rating <= 5),
+    date Text NOT NULL,
+    start_time TEXT ,
+    end_time TEXT ,
+    price DECIMAL(7,2),
+    rating DECIMAL(7,2),
     featured BOOLEAN DEFAULT false,
     image TEXT
 );
