@@ -1,0 +1,130 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.bamboo {
+  z-index: -1;
+  width: 10%;
+  height: 2vh;
+  transform: translate(0, -6px);
+}
+.panda {
+  width: 500%;
+  height: 10%;
+}
+
+.nav-links li:nth-child(1) {
+  width: 10px;
+}
+
+.first {
+  margin-top: 0.2cm;
+  width: 60%;
+}
+
+nav {
+  height: 10vh;
+  background: rgb(211, 81, 87);
+}
+.new {
+  margin-left: 12cm;
+}
+.nav-links,
+.nav-links-open {
+  display: flex;
+  list-style: none;
+  width: 100%;
+  height: 100%;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.nav-links li a,
+.nav-links-open li a {
+  color: white;
+  text-decoration: none;
+  font-size: 25px;
+}
+
+@media screen and (max-width: 768px) {
+  .line {
+    width: 30px;
+    height: 3px;
+    background: white;
+    margin: 5px;
+  }
+  nav {
+    position: relative;
+  }
+
+  #dolo {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    flex-direction: column;
+  }
+
+  .hamburger {
+    position: absolute;
+    cursor: pointer;
+    right: 5%;
+    top: 50%;
+    transform: translate(-5%, -50%);
+    z-index: 4;
+  }
+
+  .nav-links {
+    position: fixed;
+    background-color: cornflowerblue;
+    height: 100vh;
+    width: 100%;
+    flex-direction: column;
+    clip-path: circle(100px at 90% -10%);
+    -webkit-clip-path: circle(100px at 90% -20%);
+    transition: all 1s ease-out;
+    pointer-events: none;
+  }
+
+  .nav-links-open {
+    position: fixed;
+    background-color: cornflowerblue;
+    height: 100vh;
+    width: 100%;
+    flex-direction: column;
+    clip-path: circle(1200px at 90% -10%);
+    -webkit-clip-path: circle(1200px at 90% -10%);
+    transition: all 1s ease-out;
+    pointer-events: none;
+    justify-content: all;
+    align-items: center;
+  }
+
+  .nav-links li {
+    opacity: 0;
+  }
+  .new {
+    margin-left: 0cm;
+  }
+
+  .nav-links-open li:nth-child(1) {
+    transition: all 0.5s ease 0.2s;
+  }
+  .nav-links-open li:nth-child(2) {
+    transition: all 0.5s ease 0.4s;
+  }
+  .nav-links-open li:nth-child(3) {
+    transition: all 0.5s ease 0.6s;
+  }
+
+  .nav-links li:nth-child(1) {
+    transition: all 0.5s ease-out 0.2s;
+  }
+  .nav-links li:nth-child(2) {
+    transition: all 0.5s ease-out 0.1s;
+  }
+  .nav-links li:nth-child(3) {
+    transition: all 0.5s ease-out 0.05s;
+  }
+}
