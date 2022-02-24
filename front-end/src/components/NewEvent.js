@@ -1,6 +1,8 @@
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
 import { useState } from "react";
+import * as React from "react";
+import "./NewEvent.css";
 
 const NewEvent = () => {
   const navigate = useNavigate();
@@ -15,15 +17,11 @@ const NewEvent = () => {
     image: "",
   });
 
-  // function handleTextChange(event) {
-  //   if (event.target.id === "is_healthy") {
-  //     setSnack({ ...snack, [event.target.id]: !snack.is_healthy });
-  //   } else {
-  //     setSnack({ ...snack, [event.target.id]: event.target.value });
-  //   }
-  // }
-  const handleText = (event) => {
-    setEvent({ ...newEvent, [event.target.id]: event.target.value });
+  const handleText = (e) => {
+    if (e.target.id === "featured") {
+      setEvent({ ...newEvent, [e.target.id]: !newEvent.featured });
+    }
+    setEvent({ ...newEvent, [e.target.id]: e.target.value });
   };
 
   const addEvent = (newSnack) => {
@@ -52,8 +50,6 @@ const NewEvent = () => {
   return (
     <div id="edit-form">
       <form onSubmit={handleSubmit}>
-        <div className="editForm"></div>
-
         <label htmlFor="name">Name</label>
         <input
           id="name"
@@ -92,6 +88,13 @@ const NewEvent = () => {
         <input id="date" value={date} type="date" onChange={handleText} />
         <label htmlFor="Price">Price</label>
         <input id="price" value={price} type="number" onChange={handleText} />
+        <label htmlFor="date">featured</label>
+        <input
+          id="featured"
+          value={featured}
+          type="checkbox"
+          onChange={handleText}
+        />
 
         <label htmlFor="image">Image</label>
         <input id="image" value={image} type="text" onChange={handleText} />

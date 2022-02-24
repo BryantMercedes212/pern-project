@@ -1,5 +1,23 @@
-.AllEvents {
+.eachEvent {
+  display: flex;
+  justify-content: space-between;
   background-color: antiquewhite;
-  transform: translate(0, -10px);
-  height: 90vh;
+  margin-top: 20px;
+  margin-bottom: 45px;
+  width: 50%;
+}
+
+.eventLine {
+  width: 80%;
+  height: 10px;
+  background: black;
+  margin-bottom: 1cm;
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
 }

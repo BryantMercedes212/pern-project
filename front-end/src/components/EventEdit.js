@@ -14,10 +14,14 @@ function EventEditForm() {
     date: "",
     price: 0,
     image: "",
+    featured: false,
   });
   const navigate = useNavigate();
 
   const handleText = (e) => {
+    if (e.target.id === "featured") {
+      setEvent({ ...event, [e.target.id]: !event.featured });
+    }
     setEvent({ ...event, [e.target.id]: e.target.value });
   };
 
@@ -90,6 +94,13 @@ function EventEditForm() {
         <input id="date" value={date} type="date" onChange={handleText} />
         <label htmlFor="Price">Price</label>
         <input id="price" value={price} type="number" onChange={handleText} />
+        <label htmlFor="date">featured</label>
+        <input
+          id="featured"
+          value={featured}
+          type="checkbox"
+          onChange={handleText}
+        />
 
         <label htmlFor="image">Image</label>
         <input id="image" value={image} type="text" onChange={handleText} />

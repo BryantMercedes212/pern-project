@@ -57,6 +57,7 @@ nav {
   }
   nav {
     position: relative;
+    z-index: 1;
   }
 
   #dolo {
@@ -85,6 +86,7 @@ nav {
     -webkit-clip-path: circle(100px at 90% -20%);
     transition: all 1s ease-out;
     pointer-events: none;
+    z-index: 1;
   }
 
   .nav-links-open {
@@ -99,6 +101,7 @@ nav {
     pointer-events: none;
     justify-content: all;
     align-items: center;
+    z-index: 1;
   }
 
   .nav-links li {

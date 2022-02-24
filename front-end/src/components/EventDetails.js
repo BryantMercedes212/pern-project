@@ -28,7 +28,7 @@ function EventDetails() {
   return (
     <div className="events">
       <aside>
-        <h4>{image}</h4>
+        <img src={image} alt="event image"></img>
       </aside>
       <div className="event">
         <h5>{name}</h5>

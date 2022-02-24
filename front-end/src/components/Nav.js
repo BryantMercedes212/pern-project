@@ -11,6 +11,7 @@ const Nav = () => {
   const handleToggle = () => {
     setToggle(!isToggle);
   };
+
   return (
     <header>
       <nav>
